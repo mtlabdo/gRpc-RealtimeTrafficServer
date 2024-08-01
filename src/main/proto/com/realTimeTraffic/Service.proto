@@ -1,0 +1,17 @@
+syntax = "proto3";
+package com.realTimeTraffic;
+option java_outer_classname = "ServiceProto";
+option java_multiple_files = true;
+
+
+service TrafficMonitoring {
+  rpc RealTimeTraffic(SubscribeTrafficRequest) returns (TrafficResponse){}
+}
+
+message SubscribeTrafficRequest {
+  string deviceId = 1;
+}
+
+message TrafficResponse {
+  string message = 1;
+}
